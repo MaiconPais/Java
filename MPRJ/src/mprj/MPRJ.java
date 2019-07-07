@@ -16,6 +16,9 @@ public class MPRJ {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        Cadastro cadatro =  new Cadastro();
+        cadatro.setVisible(true);
     }
-    
+     
 }
