@@ -23,20 +23,20 @@ public class CadastroBanco {
     private String usuario = "root";
     private String senha = "";
     
-    public void salvar(Funcionario funcionario){
+    Funcionario funcionario = new Funcionario();
+    public void salvar(){
         try{
            Connection con = DriverManager.getConnection(stringDeConexao, 
                                                                 usuario, 
                                                                 senha);
            Statement stmt = con.createStatement();                                                     
            
-           String comandoInsert = "INSERT INTO funcionario(nome, sexo, endereco, bairro,"
-                   + "complemento, municipio, uf)"
-                   + "VALUES ('@nome', '@sexo', '@endereco',"
-                   + "'@bairro', '@complemento', '@municipio', 'uf');";
+           String comandoInsert = "INSERT INTO Funcionario(Nome,Perfil)"
+                   + "VALUES ('@Nome', '@Perfil')";
+                   
            
            //Altera as strings para o nome desejado
-           comandoInsert = comandoInsert.replace("@nome", funcionario.getNome());
+           comandoInsert = comandoInsert.replace("@Nome", funcionario.getNome());
                                     /*    .replace("@sexo", funcionario.getSexo().toString());
                                         .replace("@endereco", funcionario.getEndereco())
                                         .replace("@bairro", funcionario.getBairro())
