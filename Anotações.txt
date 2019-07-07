@@ -1,0 +1,34 @@
+Download do driver: mysql jdbc driver
+
+
+Dentro do MySql Workbench:
+
+File >> New Model
+
+add Diagram
+
+place new Table (criar tabelas)
+
+cria os campos da tabla
+
+Database >> Syncrhonize Model
+
+
+
+Para testar:
+
+use funcionariodb;
+
+select * from funcionario;
+
+
+
+Passo a Passo para comunicar BD (Na classe do Java):
+
+1 Abre Conexao
+
+2 Cria dados
+
+3 Insere dados (Executa comando)
+
+4 Fecha Conexao
