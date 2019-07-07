@@ -35,7 +35,7 @@ public class Cadastro extends javax.swing.JFrame {
         MatrFuncionario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         PerfilFuncionario = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        Salvar = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         NomeCraaiComarca = new javax.swing.JTextField();
@@ -146,10 +146,10 @@ public class Cadastro extends javax.swing.JFrame {
 
         PerfilFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Servidor", "Membro", "Tercerizado", "Estagiario" }));
 
-        jButton1.setText("Salvar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Salvar.setText("Salvar");
+        Salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SalvarActionPerformed(evt);
             }
         });
 
@@ -176,7 +176,7 @@ public class Cadastro extends javax.swing.JFrame {
                         .addGap(27, 27, 27))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(157, 157, 157))
         );
         jPanel1Layout.setVerticalGroup(
@@ -193,7 +193,7 @@ public class Cadastro extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(PerfilFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(Salvar)
                 .addGap(73, 73, 73))
         );
 
@@ -1000,9 +1000,12 @@ public class Cadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        CadastroBanco Salvar = new CadastroBanco() ;
+         Salvar.salvar();
+    }//GEN-LAST:event_SalvarActionPerformed
 
     private void NomefuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomefuncionarioActionPerformed
       
@@ -1054,8 +1057,8 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JTextField Nomefuncionario;
     private javax.swing.JTextField OrgaoDeExeComarca;
     private javax.swing.JComboBox<String> PerfilFuncionario;
+    private javax.swing.JButton Salvar;
     private javax.swing.JTextField TelComarca;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
