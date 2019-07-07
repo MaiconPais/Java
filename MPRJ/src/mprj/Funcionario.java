@@ -5,10 +5,6 @@
  */
 package mprj;
 
-/**
- *
- * @author thiago.carvalho
- */
 public class Funcionario {
     int matricula;
     String nome;
@@ -16,6 +12,31 @@ public class Funcionario {
     String email;
     String Perfil;
 
+    public Funcionario(int matricula){
+        this.matricula = matricula; 
+    }
+    
+    public Funcionario(String nome){
+        this.nome = nome;
+    }
+    
+    public Funcionario(int matricula,String nome){
+        this.matricula = matricula;
+        this.nome = nome;
+    }
+    
+    public Funcionario(int matricula,String nome,String telefone){
+        this.matricula = matricula;
+        this.nome = nome;
+    }
+    
+    public Funcionario(int matricula,String nome,String telefone,String email){
+        this.matricula = matricula;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email; 
+    }
+    
     public Funcionario(int matricula,String nome,String telefone,String email,String Perfil){
         this.matricula = matricula;
         this.nome = nome;
@@ -23,6 +44,8 @@ public class Funcionario {
         this.email = email;
         this.Perfil = Perfil;  
     }
+    
+    public Funcionario (){}
     
     public int getMatricula() {
         return matricula;
