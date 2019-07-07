@@ -9,30 +9,20 @@ package mprj;
  *
  * @author thiago.carvalho
  */
-public class Computador  extends Patrimonio{
-
-    public int getPatrimonioNovo() {
-        return patrimonioNovo;
+public class Computador{
+        protected int patrimonio;
+        protected String modelo;
+    
+    public Computador() {
+        this.patrimonio = patrimonio;
+    }
+    
+    public int getPatrimonio() {
+        return patrimonio;
     }
 
-    public void setPatrimonioNovo(int patrimonioNovo) {
-        this.patrimonioNovo = patrimonioNovo;
-    }
-
-    public int getPatrinmonioAntigo() {
-        return patrinmonioAntigo;
-    }
-
-    public void setPatrinmonioAntigo(int patrinmonioAntigo) {
-        this.patrinmonioAntigo = patrinmonioAntigo;
-    }
-
-    public String getSerie() {
-        return serie;
-    }
-
-    public void setSerie(String serie) {
-        this.serie = serie;
+    public void setPatrimonio(int patrimonioNovo) {
+        this.patrimonio = patrimonioNovo;
     }
 
     public String getModelo() {
@@ -42,7 +32,5 @@ public class Computador  extends Patrimonio{
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-
-  
 
 }

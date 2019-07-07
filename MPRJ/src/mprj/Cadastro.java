@@ -34,7 +34,7 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         MatrFuncionario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        PerfilFuncionario = new javax.swing.JComboBox<>();
+        PerfilFuncionario = new javax.swing.JComboBox<String>();
         Salvar = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -130,7 +130,6 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Nome :");
 
-        Nomefuncionario.setText("jTextField1");
         Nomefuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NomefuncionarioActionPerformed(evt);
@@ -139,12 +138,10 @@ public class Cadastro extends javax.swing.JFrame {
 
         jLabel2.setText("Matricula : ");
 
-        MatrFuncionario.setText("jTextField2");
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Perfil : ");
 
-        PerfilFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Servidor", "Membro", "Tercerizado", "Estagiario" }));
+        PerfilFuncionario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Servidor", "Membro", "Tercerizado", "Estagiario" }));
 
         Salvar.setText("Salvar");
         Salvar.addActionListener(new java.awt.event.ActionListener() {
@@ -202,27 +199,23 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Nome do Craai :");
 
-        NomeCraaiComarca.setText("jTextField3");
-
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("Comarca");
-
-        NomeComarca.setText("jTextField4");
+        jLabel5.setText("Comarca:");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Endereço :");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel7.setText("Orgão de Execução");
+        jLabel7.setText("Orgão de Execução:");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Tel :");
 
-        OrgaoDeExeComarca.setText("jTextField5");
-
-        EnderecoComarca.setText("jTextField6");
-
-        TelComarca.setText("jTextField7");
+        TelComarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelComarcaActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Salvar");
 
@@ -308,14 +301,6 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setText("Modelo :");
 
-        jTextField8.setText("jTextField8");
-
-        jTextField9.setText("jTextField9");
-
-        jTextField10.setText("jTextField10");
-
-        jTextField11.setText("jTextField11");
-
         jButton4.setText("Salvar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -384,14 +369,6 @@ public class Cadastro extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setText("Modelo :");
-
-        jTextField12.setText("jTextField8");
-
-        jTextField13.setText("jTextField9");
-
-        jTextField14.setText("jTextField10");
-
-        jTextField15.setText("jTextField11");
 
         jButton5.setText("Salvar");
 
@@ -487,14 +464,6 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel20.setText("Modelo :");
 
-        jTextField16.setText("jTextField8");
-
-        jTextField17.setText("jTextField9");
-
-        jTextField18.setText("jTextField10");
-
-        jTextField19.setText("jTextField11");
-
         jButton7.setText("Salvar");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -588,14 +557,6 @@ public class Cadastro extends javax.swing.JFrame {
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel24.setText("Modelo :");
-
-        jTextField20.setText("jTextField8");
-
-        jTextField21.setText("jTextField9");
-
-        jTextField22.setText("jTextField10");
-
-        jTextField23.setText("jTextField11");
 
         jButton8.setText("Salvar");
 
@@ -691,14 +652,6 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel28.setText("Modelo :");
 
-        jTextField24.setText("jTextField8");
-
-        jTextField25.setText("jTextField9");
-
-        jTextField26.setText("jTextField10");
-
-        jTextField27.setText("jTextField11");
-
         jButton9.setText("Salvar");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -793,14 +746,6 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel36.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel36.setText("Modelo :");
 
-        jTextField32.setText("jTextField8");
-
-        jTextField33.setText("jTextField9");
-
-        jTextField34.setText("jTextField10");
-
-        jTextField35.setText("jTextField11");
-
         jButton3.setText("Salvar");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
@@ -890,14 +835,6 @@ public class Cadastro extends javax.swing.JFrame {
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel32.setText("Modelo :");
-
-        jTextField28.setText("jTextField8");
-
-        jTextField29.setText("jTextField9");
-
-        jTextField30.setText("jTextField10");
-
-        jTextField31.setText("jTextField11");
 
         jButton6.setText("Salvar");
 
@@ -1000,18 +937,21 @@ public class Cadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void TelComarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelComarcaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TelComarcaActionPerformed
+
     private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
         // TODO add your handling code here:
-        
+
         CadastroBanco Salvar = new CadastroBanco() ;
-         Salvar.salvar();
+        Salvar.salvar();
     }//GEN-LAST:event_SalvarActionPerformed
 
     private void NomefuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomefuncionarioActionPerformed
-      
+
         Funcionario funcionario = new Funcionario();
         Nomefuncionario.setText(funcionario.getNome());
-      
     }//GEN-LAST:event_NomefuncionarioActionPerformed
 
     /**
