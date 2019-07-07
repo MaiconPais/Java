@@ -13,7 +13,6 @@ public class MPRJ {
      String tel;
      
      
-     
      public void ObterDados(){
          
      }

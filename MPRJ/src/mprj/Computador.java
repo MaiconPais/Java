@@ -13,9 +13,20 @@ public class Computador{
         protected int patrimonio;
         protected String modelo;
     
-    public Computador() {
+    public Computador(int patrimonio,String modelo) {
+        this.patrimonio = patrimonio;
+        this.modelo = modelo;
+    }
+    
+    public Computador(int patrimonio) {
         this.patrimonio = patrimonio;
     }
+    
+    public Computador(String modelo) {
+        this.modelo = modelo;
+    }
+    
+    public Computador(){};
     
     public int getPatrimonio() {
         return patrimonio;

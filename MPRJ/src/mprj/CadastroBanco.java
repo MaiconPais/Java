@@ -16,14 +16,18 @@ import java.util.List;
  */
 public class CadastroBanco {
     
+    int matricula;
+    String nome;
+    String telefone;
+    String email;
+    String Perfil;
 
-
-    private String stringDeConexao = "jdbc:mysql://localhost:3306/BancoMPRJ?"
+    private final String stringDeConexao = "jdbc:mysql://localhost:3306/BancoMPRJ?"
                                             +"useTimezone=true&serverTimezone=UTC";
-    private String usuario = "root";
-    private String senha = "";
+    private final String usuario = "root";
+    private final String senha = "";
     
-    Funcionario funcionario = new Funcionario();
+    Funcionario funcionario = new Funcionario(matricula, nome, telefone, email, Perfil);
     public void salvar(){
         try{
            Connection con = DriverManager.getConnection(stringDeConexao, 

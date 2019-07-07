@@ -16,6 +16,14 @@ public class Funcionario {
     String email;
     String Perfil;
 
+    public Funcionario(int matricula,String nome,String telefone,String email,String Perfil){
+        this.matricula = matricula;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email;
+        this.Perfil = Perfil;  
+    }
+    
     public int getMatricula() {
         return matricula;
     }

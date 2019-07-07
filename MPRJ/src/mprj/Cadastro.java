@@ -10,7 +10,12 @@ package mprj;
  * @author Daniela
  */
 public class Cadastro extends javax.swing.JFrame {
-
+    
+    int matricula;
+    String nome;
+    String telefone;
+    String email;
+    String Perfil;
     /**
      * Creates new form Cadastro
      */
@@ -323,6 +328,7 @@ public class Cadastro extends javax.swing.JFrame {
 
         Funcionario funcionario = new Funcionario();
         Nomefuncionario.setText(funcionario.getNome());
+        System.out.println("Funcionario" + Nomefuncionario);
     }//GEN-LAST:event_NomefuncionarioActionPerformed
 
     /**
