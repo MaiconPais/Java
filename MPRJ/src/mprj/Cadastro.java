@@ -319,9 +319,12 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
         // TODO add your handling code here:
-
-        CadastroBanco Salvar = new CadastroBanco() ;
-        Salvar.salvar();
+         
+      //  CadastroBanco Salvar = new CadastroBanco() ;
+       // CadastroBanco.ReiniciarConexao();
+       
+   
+       
     }//GEN-LAST:event_SalvarActionPerformed
 
     private void NomefuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomefuncionarioActionPerformed

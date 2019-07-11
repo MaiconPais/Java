@@ -1,68 +1,138 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package mprj;
-
+//Nome do nosso pacote //                
+ 
+package mprj;                   
+ 
+  
+ 
+//Classes necessárias para uso de Banco de dados //
+ 
 import java.sql.Connection;
+ 
 import java.sql.DriverManager;
-import java.sql.Statement;
-import java.util.List;
-
-/**
- *
- * @author Daniela
- */
+ 
+import java.sql.SQLException;
+ 
+  
+ 
+//Início da classe de conexão//
+ 
 public class CadastroBanco {
+ 
     
-    int matricula;
-    String nome;
-    String telefone;
-    String email;
-    String Perfil;
+    public static void main (String [] args){
+         getConexaoMySQL();
+        
+            }
 
-    private final String stringDeConexao = "jdbc:mysql://localhost:3306/BancoMPRJ?"
-                                            +"useTimezone=true&serverTimezone=UTC";
-    private final String usuario = "root";
-    private final String senha = "";
-    
-    Funcionario funcionario = new Funcionario(matricula, nome, telefone, email, Perfil);
-    public void salvar(){
-        try{
-           Connection con = DriverManager.getConnection(stringDeConexao, 
-                                                                usuario, 
-                                                                senha);
-           Statement stmt = con.createStatement();                                                     
-           
-           String comandoInsert = "INSERT INTO Funcionario(Nome,Perfil)"
-                   + "VALUES ('@Nome', '@Perfil')";
-                   
-           
-           //Altera as strings para o nome desejado
-           comandoInsert = comandoInsert.replace("@Nome", funcionario.getNome());
-                                    /*    .replace("@sexo", funcionario.getSexo().toString());
-                                        .replace("@endereco", funcionario.getEndereco())
-                                        .replace("@bairro", funcionario.getBairro())
-                                        .replace("@complemento", funcionario.getComplemento())
-                                        .replace("@municipio", funcionario.getMunicipio())
-                                        .replace("@uf", funcionario.getUf());
-*/
-           
-           System.out.println("Executando...");
-          // System.out.println(comandoInsert);
-           
-           //stmt.execute(comandoInsert); //Insere os dados
-           
-        } catch (Exception excecao){
-            excecao.printStackTrace();
-        }
-            
+             public static String status = "Não conectou...";
+ 
+//Método Construtor da Classe//
+ 
+        public CadastroBanco() {
+ 
     }
-    
-    public List<Funcionario> recuperarFuncionario(){
-        return null;
+ 
+  
+ 
+//Método de Conexão//
+ 
+public static java.sql.Connection getConexaoMySQL() {
+ 
+        Connection connection = null;          //atributo do tipo Connection
+ 
+  
+ 
+try {
+ 
+// Carregando o JDBC Driver padrão
+ 
+String driverName = "com.mysql.jdbc.Driver";                        
+ 
+Class.forName(driverName);
+ 
+  
+ 
+// Configurando a nossa conexão com um banco de dados//
+ 
+        String serverName = "localhost:3306";    //caminho do servidor do BD
+ 
+        String mydatabase ="mprj";        //nome do seu banco de dados
+ 
+        String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
+      
+      
+        String username = "root";        //nome de um usuário de seu BD      
+ 
+        String password = "123";      //sua senha de acesso
+ 
+        // connection = DriverManager.getConnection(url, username, password);
+         
+      connection  = DriverManager.getConnection("jdbc:mysql://localhost:3306/mprj","root","123");
+          
+      
+       
+
+        //Testa sua conexão//  
+ 
+        if (connection != null) {
+ 
+            status = ("STATUS--->Conectado com sucesso!");
+ 
+        } else {
+ 
+            status = ("STATUS--->Não foi possivel realizar conexão");
+ 
+        }
+ 
+ 
+        return connection;
+ 
+  
+        } catch (ClassNotFoundException e) {  //Driver não encontrado
+ 
+            System.out.println("O driver expecificado nao foi encontrado.");
+ 
+            return null;
+ 
+        } catch (SQLException e) {
+//Não conseguindo se conectar ao banco
+ 
+            System.out.println("Nao foi possivel conectar ao Banco de Dados."+e); 
+            return null;
+        }
+    }
+    //Método que retorna o status da sua conexão//
+ 
+    public static String statusConection() {
+ 
+        return status;
+ 
+    }
+   //Método que fecha sua conexão//
+ 
+    public static boolean FecharConexao() {
+ 
+        try {
+ 
+         CadastroBanco.getConexaoMySQL().close();
+ 
+            return true;
+ 
+        } catch (SQLException e) {
+ 
+            return false;
+ 
+        }
+    }
+   //Método que reinicia sua conexão//
+ 
+    public static java.sql.Connection ReiniciarConexao() {
+ 
+        FecharConexao();
+ 
+  
+ 
+        return CadastroBanco.getConexaoMySQL();
+ 
     }
 }
-
-//}

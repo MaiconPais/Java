@@ -99,7 +99,7 @@ public class MainForm extends javax.swing.JPanel {
 
     private void btncadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncadastrarActionPerformed
         cadastro.setVisible(true);
-        main.setVisible(false);
+         main.setVisible(false);
     }//GEN-LAST:event_btncadastrarActionPerformed
 
 
