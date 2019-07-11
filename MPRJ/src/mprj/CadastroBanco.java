@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
  
 import java.sql.SQLException;
+
+import java.sql.Statement;
  
   
  
@@ -36,7 +38,7 @@ public class CadastroBanco {
  
 //Método de Conexão//
  
-public static java.sql.Connection getConexaoMySQL() {
+public static  java.sql.Connection  getConexaoMySQL() {
  
         Connection connection = null;          //atributo do tipo Connection
  
@@ -53,21 +55,19 @@ Class.forName(driverName);
   
  
 // Configurando a nossa conexão com um banco de dados//
- 
-        String serverName = "localhost:3306";    //caminho do servidor do BD
- 
-        String mydatabase ="mprj";        //nome do seu banco de dados
- 
-        String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
       
       
         String username = "root";        //nome de um usuário de seu BD      
  
-        String password = "123";      //sua senha de acesso
- 
-        // connection = DriverManager.getConnection(url, username, password);
+        String password = "1234";      //sua senha de acesso
+        
+        String url = "jdbc:mysql://localhost:3306/mprj?"
+                                            +"useTimezone=true&serverTimezone=UTC";
+        
+        connection = DriverManager.getConnection(url, username, password);
          
-      connection  = DriverManager.getConnection("jdbc:mysql://localhost:3306/mprj","root","123");
+    
+          //Statement stmt = connection.createStatement();  
           
       
        
@@ -77,6 +77,7 @@ Class.forName(driverName);
         if (connection != null) {
  
             status = ("STATUS--->Conectado com sucesso!");
+     
  
         } else {
  
